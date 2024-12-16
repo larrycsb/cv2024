@@ -1,302 +1,247 @@
-/* Import police */
-@import 'https://fonts.googleapis.com/css2?family=Montserrat&display=swap';
-
-/* CSS PC */
-html,
+/* Global Styles */
 body {
-    width: 100%;
-    height: 100%;
-    overflow-x: auto;
-    overflow-y: auto;
+    font-family: Arial, sans-serif;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #a4b5ff;
-    color: white;
+    padding: 0;
+    background: linear-gradient(to bottom, #e6f7ff, #cce0ff); /* Dégradé bleu clair */
+    color: #1a1a1a;
+    line-height: 1.6;
+    transition: background-color 0.3s ease;
 }
 
-/* Prendre en compte la bordure */
-* {
-    box-sizing: border-box;
-}
-
-/* Header + Footer */
 header {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-}
-
-/* Enlève le soulignement des liens */
-a {
-    text-decoration: none;
+    background: linear-gradient(to right, #007acc, #005bb5); /* Dégradé bleu vif */
     color: white;
-}
-
-/* Profil */
-.text {
-    justify-content: center;
-    background-color: #90a4ff;
-    box-shadow: 10px 10px #5272fd;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-}
-
-.box-text {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-/* Compétences */
-.skill {
-    background-color: #90a4ff;
-    box-shadow: 10px 10px #5272fd;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-.skill h3 {
     text-align: center;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.container {
-    width: 500px;
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: #ddd;
-    margin-bottom: 20px;
-}
-
-.skills {
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: white;
-}
-
-.html-css {
-    width: 70%;
-    background-color: #4CAF50;
-}
-
-.java {
-    width: 65%;
-    background-color: #2196F3;
-}
-
-.python {
-    width: 60%;
-    background-color: #f44336;
-}
-
-/* Bouton CV et Contact */
-div[class*=box] {
-    height: 33.33%;
-    width: 100%; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.btn {
-    line-height: 50px;
-    height: 50px;
-    text-align: center;
-    width: 250px;
-    cursor: pointer;
-    color: white;
-    transition: all 0.5s;
+    padding: 2rem 0;
     position: relative;
 }
 
-.btn::before {
-    content: '';
+.header-container {
+    position: relative;
+}
+
+.header-container img.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid white;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: rgba(255,255,255,0.1);
-    transition: all 0.3s;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.btn:hover::before {
-    opacity: 0 ;
-    transform: scale(0.5,0.5);
+.header-container h1 {
+    margin: 0;
+    font-size: 4rem; /* Augmenté pour occuper toute la place */
+    font-weight: bold;
+    margin-top: 200px; /* Ajuste pour laisser place à la photo */
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.btn::after {
-    content: '';
+/* Avatar de sportif animé */
+.header-avatar {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0;
-    transition: all 0.3s;
-    border: 1px solid rgba(255,255,255,0.5);
-    transform: scale(1.2,1.2);
+    bottom: -30px;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+    animation: float 3s ease-in-out infinite;
 }
 
-.btn:hover::after {
-    opacity: 1;
-    transform: scale(1,1);
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
-/* Bouton télécharger */
-.download {
-    margin-left: 40px;
-    width: 50px;
-    height: 50px;
+nav {
+    background-color: #004d99; /* Bleu foncé */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.download:hover {
-    filter: invert(100%);
-}
-
-/* Réseaux sociaux */
-.socialmedia {
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-right: 20%;
-    padding-left: 20%;
-    padding-top: 40px;
+    justify-content: center;
 }
 
-img {
-    width: 100px;
-    height: 100px;
+nav ul li {
+    margin: 0 1rem;
 }
 
-.box-button {
-    padding-bottom: 20px;
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.box-1 img {
-    border: 2px solid transparent;
-    transition: all 1s ease;
+nav ul li a:hover {
+    background-color: #005bb5;
+    transform: scale(1.1);
 }
 
-.box-2 img {
-    border: 2px solid transparent;
-    transition: all 1s ease;
+main {
+    padding: 2rem;
 }
 
-.box-3 img {
-    border: 2px solid transparent;
-    transition: all 1s ease;
-}
-  
-.box-1:hover img {
-    filter: invert(100%);
+section {
+    margin-bottom: 2rem;
+    background-color: #ffffff;
+    padding: 1.5rem;
     border-radius: 10px;
-    transform:scale(1.25);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-.box-2:hover img {
-    filter: invert(100%);
+section:hover {
+    transform: translateY(-10px);
+}
+
+h2 {
+    color: #007acc;
+    margin-top: 0;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #007acc;
+    padding-bottom: 0.5rem;
+}
+
+ul {
+    list-style: square inside;
+}
+
+.project-img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulaire de contact */
+.contact-form {
+    background: linear-gradient(to bottom, #ffffff, #e6f7ff); /* Doux dégradé pour contact */
+    padding: 2rem;
     border-radius: 10px;
-    transform:scale(1.25);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.box-3:hover img {
-    filter: invert(100%);
-    border-radius: 10px;
-    transform:scale(1.25);
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
 }
 
-@keyframes background {
-    0% {
-        background-position: 0% 0%;
+.contact-form button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #005bb5;
+    transform: scale(1.1);
+}
+
+footer {
+    background: linear-gradient(to right, #004d99, #002d66); /* Dégradé bleu foncé */
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Fun Animations */
+header {
+    animation: fadeIn 2s ease;
+}
+
+section {
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-    100% {
-        background-position: 100% 100%;
+    to {
+        opacity: 1;
     }
 }
 
-/* Responsive page réduite */
-@media screen and (max-width: 1100px) {
-    .text {
-        margin-left: 10px;
-        margin-right: 10px;
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
     }
-
-    .socialmedia {
-        padding-right: 20%;
-        padding-left: 20%;
-        padding-top: 50px;
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
-/* Responsive téléphone (testé uniquement sur Samsung Galaxy S8 et page responsive web) */
-@media screen and (max-width: 800px) {
-    .text {
-        margin-left: 10px;
-        margin-right: 10px;
+/* Button Styling for Interactivity */
+button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #005bb5;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 
-    .socialmedia {
-        padding-right: 20px;
-        padding-left: 20px;
-        padding-top: 50px;
+    nav ul li {
+        margin: 0.5rem 0;
     }
 
-    img {
-        justify-content: space-evenly;
-        width: 70px;
-        height: 70px;
+    main {
+        padding: 1rem;
     }
 
-    .box-1:hover img {
-        filter: invert(100%);
-        border-radius: 10px;
-        transform:scale(1.15);
-    }
-    
-    .box-2:hover img {
-        filter: invert(100%);
-        border-radius: 10px;
-        transform:scale(1.15);
-    }
-    
-    .box-3:hover img {
-        filter: invert(100%);
-        border-radius: 10px;
-        transform:scale(1.15);
+    .header-container h1 {
+        font-size: 3rem;
     }
 
-    .skill {
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-bottom: 40px;
+    section {
+        padding: 1rem;
     }
+}
 
-    .container {
-        width: auto;
-        margin-left: 10px;
-        margin-right: 10px;
-        background-color: #ddd;
-    }
-
-    .skills {
-        text-align: center;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        color: white;
-    }
-  }
